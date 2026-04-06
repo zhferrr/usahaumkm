@@ -1,0 +1,302 @@
+:root {
+  --cream: #fdf6ec;
+  --brown-light: #d7ccc8;
+  --brown: #8d6e63;
+  --brown-dark: #5d4037;
+  --green-matcha: #8bc34a;
+  --gold: #d4af37;
+  --shadow-light: 0 4px 12px rgba(141, 110, 99, 0.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cream);
+  color: var(--brown-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* === Header === */
+header {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.2rem 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(253, 246, 236, 0.85);
+  border-bottom: 1px solid rgba(141, 110, 99, 0.1);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--brown);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--brown);
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: var(--transition);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* === Hero === */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #f5ebe0 0%, #e8f5e9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero h2 span {
+  color: var(--gold);
+  position: relative;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--brown);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--brown);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: var(--shadow-light);
+}
+
+.btn:hover {
+  background: var(--brown-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(141, 110, 99, 0.25);
+}
+
+/* === Produk === */
+.produk {
+  padding: 6rem 0 4rem;
+  background: white;
+}
+
+.produk h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--brown-dark);
+  margin-bottom: 3rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.menu-item {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  padding: 1.8rem 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.menu-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(141, 110, 99, 0.2);
+}
+
+.menu-img {
+  width: 100%;
+  height: 140px;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--brown-light);
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: var(--brown-dark);
+  margin: 0.5rem 0;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 1.2rem;
+  margin: 0.6rem 0;
+}
+
+.btn-outline {
+  display: inline-block;
+  color: var(--brown);
+  border: 2px solid var(--brown);
+  padding: 0.5rem 1.4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 0.8rem;
+  transition: var(--transition);
+}
+
+.btn-outline:hover {
+  background: var(--brown);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* === Kontak === */
+.kontak {
+  padding: 5rem 0;
+  background: var(--cream);
+  text-align: center;
+}
+
+.kontak h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--brown-dark);
+  margin-bottom: 1.5rem;
+}
+
+.kontak p {
+  font-size: 1.1rem;
+  margin: 0.6rem 0;
+}
+
+.kontak a {
+  color: var(--brown);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+.kontak a:hover {
+  color: var(--gold);
+}
+
+/* === Footer === */
+footer {
+  background: var(--brown-dark);
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* === Responsif === */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.4rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  .menu-grid {
+    gap: 1.8rem;
+  }
+}
+
+/* Animasi Scroll */
+html {
+  scroll-behavior: smooth;
+}
+.menu-img {
+  width: 100%;
+  height: 140px; /* Tinggi tetap → rasio aspek dikontrol via tinggi & lebar penuh */
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e8f5e9; /* fallback warna hijau muda */
+}
+
+.menu-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Potong gambar agar pas tanpa stretch */
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover .menu-img img {
+  transform: scale(1.05);
+}
